@@ -153,12 +153,6 @@ sudo hostapd-wpe host.conf
 
 # SSL
 
-Guía
-
-```
-https://blog.heckel.io/2013/08/04/use-sslsplit-to-transparently-sniff-tls-ssl-connections/
-```
-
 ```
 cd
 cd pruebas
@@ -231,12 +225,6 @@ o
 sudo sslsplit -D -l connections.log -j /tmp/sslsplit/ -S logdir/ -k ca.key -c ca.crt https 0.0.0.0 8443 tcp 0.0.0.0 8080
 ```
 
-Ver
-
-```
-https://alpaca-attack.com/
-```
-
 # Crack
 
 Comprobar que el device ha sido detectado
@@ -274,4 +262,12 @@ cd Desktop
 crear un contrasenas.txt con contraseñas (incluir la contraseña buena)
 sudo aircrack-ng -w contrasenas.txt [el archivo .cap]
 Se debe mostrar "KEY FOUND" y a continuación la contraseña
+```
+
+# Enlaces
+
+```
+https://blog.heckel.io/2013/08/04/use-sslsplit-to-transparently-sniff-tls-ssl-connections/
+
+https://alpaca-attack.com/
 ```
