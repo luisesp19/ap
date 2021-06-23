@@ -216,10 +216,12 @@ sudo iptables -t nat -nL
 cd
 cd pruebas/sslsplit
 mkdir logdir
-mkdir /tmp/sslsplit
 ```
 
+## Iniciar SSL
+
 ```
+mkdir /tmp/sslsplit
 sudo sslsplit -D -l connections.log -j /tmp/sslsplit/ -S logdir/ -k ca.key -c ca.crt ssl 0.0.0.0 8443 tcp 0.0.0.0 8080
 o
 sudo sslsplit -D -l connections.log -j /tmp/sslsplit/ -S logdir/ -k ca.key -c ca.crt https 0.0.0.0 8443 tcp 0.0.0.0 8080
