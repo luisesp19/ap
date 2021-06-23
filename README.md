@@ -227,6 +227,18 @@ o
 sudo sslsplit -D -l connections.log -j /tmp/sslsplit/ -S logdir/ -k ca.key -c ca.crt https 0.0.0.0 8443 tcp 0.0.0.0 8080
 ```
 
+```
+cd
+cd pruebas/sslsplit
+tail -f connections.log
+```
+
+```
+cd
+cd pruebas/sslsplit/logdir
+ls -la
+```
+
 # Crack
 
 Comprobar que el device ha sido detectado
