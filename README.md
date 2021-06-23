@@ -1,5 +1,3 @@
-Pinchar [aqui](https://github.com/luisesp19/ap/raw/main/ca.zip) para descargar el certificado. (Descomprimirlo)
-
 # Teclado ES permanente
 
 Abrir la aplicación "Session and Startup". Ir a la pestaña "Application Autostart" y al botón "+". 
@@ -224,6 +222,14 @@ cd pruebas/sslsplit/logdir
 ls -la
 grep -r 'pass' ./
 ```
+
+## Certificado
+
+[http://luisangel2.es/ca.crt](http://luisangel2.es/ca.crt)
+
+o
+
+[https://github.com/luisesp19/ap/raw/main/ca.zip](https://github.com/luisesp19/ap/raw/main/ca.zip)
 
 # Crack
 
