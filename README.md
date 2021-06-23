@@ -217,6 +217,7 @@ tail -f connections.log
 cd
 cd pruebas/sslsplit/logdir
 ls -la
+grep -r 'pass' ./
 ```
 
 # Crack
