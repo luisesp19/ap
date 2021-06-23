@@ -213,10 +213,10 @@ sudo iptables -t nat -nL
 ```
 
 ```
-mkdir /tmp/sslsplit
 cd
 cd pruebas/sslsplit
 mkdir logdir
+mkdir /tmp/sslsplit
 ```
 
 ```
