@@ -69,21 +69,21 @@ nano ip.sh
 ```
 #!/bin/bash
 
-iptables -F
-iptables -t nat -F
+iptables-legacy -F
+iptables-legacy -t nat -F
 
-iptables -X
-iptables -t nat -X
+iptables-legacy -X
+iptables-legacy -t nat -X
 
-iptables -P INPUT ACCEPT
-iptables -P OUTPUT ACCEPT
-iptables -P FORWARD ACCEPT
+iptables-legacy -P INPUT ACCEPT
+iptables-legacy -P OUTPUT ACCEPT
+iptables-legacy -P FORWARD ACCEPT
 
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
 LAN_IF="eth0"
 
-iptables -t nat -A POSTROUTING -o $LAN_IF -j MASQUERADE
+iptables-legacy -t nat -A POSTROUTING -o $LAN_IF -j MASQUERADE
 ```
 
 # DHCP
@@ -140,7 +140,7 @@ cd pruebas
 
 ```
 sudo ./ip.sh
-sudo iptables -t nat -nL
+sudo iptables-legacy -t nat -nL
 ```
 
 ```
@@ -169,29 +169,7 @@ openssl genrsa -out ca.key 4096
 openssl req -new -x509 -days 1826 -key ca.key -out ca.crt
 ```
 
-Editar el script "ip.sh" que teníamos y cambiar todos los "iptables" por "iptables-legacy", entonces quedaría:
-
-```
-#!/bin/bash
-
-iptables-legacy -F
-iptables-legacy -t nat -F
-
-iptables-legacy -X
-iptables-legacy -t nat -X
-
-iptables-legacy -P INPUT ACCEPT
-iptables-legacy -P OUTPUT ACCEPT
-iptables-legacy -P FORWARD ACCEPT
-
-echo 1 > /proc/sys/net/ipv4/ip_forward
-
-LAN_IF="eth0"
-
-iptables-legacy -t nat -A POSTROUTING -o $LAN_IF -j MASQUERADE
-```
-
-Y debajo añadir las siguientes reglas
+Editar el script "ip.sh" que teníamos y añadir debajo lo siguiente
 
 ```
 iptables-legacy -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8080
@@ -202,16 +180,11 @@ iptables-legacy -t nat -A PREROUTING -p tcp --dport 993 -j REDIRECT --to-ports 8
 iptables-legacy -t nat -A PREROUTING -p tcp --dport 5222 -j REDIRECT --to-ports 8080
 ```
 
-Cuando se haya lanzado el ip.sh, comprobarlo con
+Volver a lanzar
 
 ```
+sudo ./ip.sh
 sudo iptables-legacy -t nat -nL
-```
-
-en lugar de con
-
-```
-sudo iptables -t nat -nL
 ```
 
 ```
