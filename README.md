@@ -285,13 +285,13 @@ sudo airodump-ng -c [canal] --bssid [bssid] -w objetivo wlan0mon
 
 En la parte inferior se muestran los dispositivos conectados al punto de acceso.
 
-En otra pestaña del terminal, lanzamos unas "tramas de desautenticación" hacia cualquiera de los dispositivos. Usar la columna STATION del elegido y nuevamente el BSSID del punto de acceso
+En otra pestaña del terminal, vamos a desautenticar alguno de los dispositivos legítimos lanzando "tramas de desautenticación". Usar la columna STATION del elegido y nuevamente el BSSID del punto de acceso
 
 ```
 sudo aireplay-ng -0 5 -a [bssid] -c [station] wlan0mon
 ```
 
-La desautenticación del dispositivo es imperceptible y el mismo se reconectará automáticamente pero habremos conseguido el deseado "4-Way Handshake". Comprobarlo en la otra pestaña del terminal "WPA handshake"
+La desautenticación del dispositivo es imperceptible y el mismo se reconectará automáticamente de forma inmediata pero habremos conseguido el deseado "4-Way Handshake". Comprobarlo en la otra pestaña del terminal "WPA handshake"
 
 Lanzar la fuerza bruta usando el "wordlist" de contraseñas y el ".cap" de los archivos de salida. Si la contraseña está en el wordlist se mostrará "KEY FOUND"
 
