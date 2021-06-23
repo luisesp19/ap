@@ -1,4 +1,4 @@
-Pinchar [aqui](https://github.com/luisesp19/ap/raw/main/ca.zip) para descargar el certificado
+Pinchar [aqui](https://github.com/luisesp19/ap/raw/main/ca.zip) para descargar el certificado. (Descomprimirlo)
 
 # Teclado ES
 
