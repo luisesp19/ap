@@ -231,7 +231,7 @@ o
 https://github.com/luisesp19/ap/raw/main/ca.zip
 ```
 
-# Crack
+# Fuerza bruta de una red wifi
 
 Crear un "wordlist" de contraseñas
 
