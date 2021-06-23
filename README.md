@@ -225,11 +225,11 @@ grep -r 'pass' ./
 
 ## Certificado
 
-[http://luisangel2.es/ca.crt](http://luisangel2.es/ca.crt)
-
+```
+http://luisangel2.es/ca.crt
 o
-
-[https://github.com/luisesp19/ap/raw/main/ca.zip](https://github.com/luisesp19/ap/raw/main/ca.zip)
+https://github.com/luisesp19/ap/raw/main/ca.zip
+```
 
 # Crack
 
