@@ -1,9 +1,14 @@
 Pinchar [aqui](https://github.com/luisesp19/ap/raw/main/ca.zip) para descargar el certificado. (Descomprimirlo)
 
-# Teclado ES
+# Teclado ES permanente
+
+Abrir la aplicación "Session and Startup". Ir a la pestaña "Application Autostart" y al botón "+". 
 
 ```
-setxkbmap es sundeadkeys
+Name: Teclado ES
+Description:
+Command: setxkbmap es sundeadkeys
+Trigger: on login
 ```
 
 # AP
