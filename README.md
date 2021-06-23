@@ -285,7 +285,7 @@ sudo airodump-ng -c [canal] --bssid [bssid] -w objetivo wlan0mon
 
 En la parte inferior se muestran los dispositivos conectados al punto de acceso.
 
-En otra pestaña del terminal, lanzamos unas "tramas de desautenticación" hacia cualquiera de los dispositivos. Usar la columna STATION para elegirlo
+En otra pestaña del terminal, lanzamos unas "tramas de desautenticación" hacia cualquiera de los dispositivos. Usar la columna STATION del elegido y nuevamente el BSSID del punto de acceso
 
 ```
 sudo aireplay-ng -0 5 -a [bssid] -c [station] wlan0mon
