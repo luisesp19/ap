@@ -301,11 +301,15 @@ cd Desktop
 sudo aircrack-ng -w [contrasenas] [cap]
 ```
 
-# Algunos enlaces
+# Links
 
 ```
 https://blog.heckel.io/2013/08/04/use-sslsplit-to-transparently-sniff-tls-ssl-connections/
+```
 
+# Otros
+
+```
 https://alpaca-attack.com/
 
 https://protegermipc.net/2020/05/27/descifrar-trafico-ssl-con-wireshark/
