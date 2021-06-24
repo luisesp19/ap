@@ -221,14 +221,6 @@ ls -la
 grep -r 'pass' ./
 ```
 
-## Certificado
-
-```
-http://luisangel2.es/ca.crt
-o
-https://github.com/luisesp19/ap/raw/main/ca.zip
-```
-
 # Fuerza bruta de una red wifi
 
 Crear un "wordlist" de contraseñas
