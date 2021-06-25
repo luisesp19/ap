@@ -1,14 +1,3 @@
-# Teclado ES permanente
-
-Abrir la aplicación "Session and Startup". Ir a la pestaña "Application Autostart" y al botón "+". 
-
-```
-Name: Teclado ES
-Description:
-Command: setxkbmap es sundeadkeys
-Trigger: on login
-```
-
 # AP
 
 Comprobar que el dispositivo está enchufado y detectado
@@ -307,4 +296,15 @@ https://blog.heckel.io/2013/08/04/use-sslsplit-to-transparently-sniff-tls-ssl-co
 https://alpaca-attack.com/
 
 https://protegermipc.net/2020/05/27/descifrar-trafico-ssl-con-wireshark/
+```
+
+# Teclado ES permanente
+
+Abrir la aplicación "Session and Startup". Ir a la pestaña "Application Autostart" y al botón "+". 
+
+```
+Name: Teclado ES
+Description:
+Command: setxkbmap es sundeadkeys
+Trigger: on login
 ```
